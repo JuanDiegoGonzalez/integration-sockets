@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
+const movies = require("../controllers/movies");
+
 /* GET home page. */
-const array = [{id: 1, name: "Casablanca"},{id: 2, name: "ET"},{id: 3, name: "Tiburón"}];
 router.get('/', function(req, res, next) {
-  res.send(array)
+  movies.getMovies(data=>{
+    res.send(data);
+  })
 });
 
 module.exports = router;
